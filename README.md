@@ -10,7 +10,7 @@ The hand signs are special gestures when performed establish communication. In e
 
 ## Working
 #### 1
-The user initially has to create up a folder of hand signs and gestures that would act as a dataset for the model. This folder contains the segmented hand signs thresholded and background noise removed. This acts as training and testing set for the neural network model. Run "signCreator.py" and press 'q' to capture and save images.
+The user initially has to create up a folder of hand signs and gestures that would act as a dataset for the model. This folder contains the segmented hand signs thresholded and background noise removed. This acts as training and testing set for the neural network model. Launch signCreator.py" and press 'q' to capture and save images.
 
 
 #### 2
@@ -20,4 +20,12 @@ Run "modelCreate.py" to initialise the neural network model. It saves the model 
 
 #### 3
 Run "main.py" to run the hand gesture recognition. It provides a textual representation of the hand signs performed. Additional audio library can convert the text to speech and speech to text to hand signs conversion.
+
+## Packages Used:
+To initialise the project, the following libraries should be included by:
+```python
+pip install -r requirements.txt
+```
+
+
 

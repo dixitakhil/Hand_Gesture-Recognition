@@ -19,6 +19,7 @@ You are then prompted to make a selection. Enter a choice of the hand sign in nu
 Enter the hand sign number :: 1
 Press q to capture the images
 ```
+<img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/signs.png" height="450">
 Place the hand in the green box and wait for the message to display on the screen for capturing the images. You'll see the camera feed. Move your hand slowly across the frame, closer and further from the camera. Try to rotate a bit your pose. Do every movement slowly as you want to create maximum number of images with minimal changes.
 
 #### 2
@@ -31,16 +32,18 @@ Launch modelCreate.py script to initialise the neural network model. It saves th
 ```python
 pip modelCreate.py
 ```
+<img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/modelcreate.gif" height="450">
 
 #### 3
 Launch main.py script to run the hand gesture recognition. It provides a textual representation of the hand signs performed. Additional audio library can convert the text to speech and speech to text to hand signs conversion.
 ```python
 pip main.py
 ```
+<img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/recognition.gif" height="450">
 ## Architecture
 
 ### Pipeline
-
+<img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/pipeline.png"  height="450">
 The pipeline of this project consists of 4 steps :
 - A frame is grabbed from the camera by a dedicated thread, converted to RGB (from BGR) and put into the input queue
 - A worker grabs the frame from the queue and pass it into the SSD. This gives us a bouding box of where the hand(s) is and the corresponding cropped frame. 

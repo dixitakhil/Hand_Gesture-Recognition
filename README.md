@@ -46,9 +46,13 @@ pip main.py
 ### Pipeline
 <img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/pipeline.png"  height="450">
 The pipeline of this project consists of 4 steps :
+
 - A frame is grabbed from the camera by a dedicated thread, converted to RGB (from BGR) and put into the input queue
-- A worker grabs the frame from the queue and pass it into the SSD. This gives us a bouding box of where the hand(s) is and the corresponding cropped frame. 
+
+- A worker grabs the frame from the queue and pass it into the SSD. This gives us a bouding box of where the hand(s) is and the corresponding cropped frame.  
+
 - This cropped frame of the hand is then passed to the CNN, which give us a class vector output of values between 0 and 1. These values correspond to the probability of the frame to be one of the classes. The worker has finished its job and put: the frame with bouding box drawn on top, the cropped frame and the classes into three different queues.
+
 - The main thread, responsible of showing the results can grab the informations from the queues and display them in three windows.
 
 

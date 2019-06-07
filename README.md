@@ -62,6 +62,18 @@ To initialise the project, the following libraries should be included by:
 pip install -r requirements.txt
 ```
 
+## Versions
+At the time of project:
+- Python version is is 3.6.1
+- Tensorflow version 1.13.1
+- Opencv-python is 3.3.1
+- Keras is 2.2.4
+
+### Gesture Sheet
+The sign sheet used to form the data set is as:
+<br>
+<img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/asl.jpg" height="450">
+
 
 
 

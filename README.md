@@ -10,22 +10,50 @@ The hand signs are special gestures when performed establish communication. In e
 
 ## Working
 #### 1
-The user initially has to create up a folder of hand signs and gestures that would act as a dataset for the model. This folder contains the segmented hand signs thresholded and background noise removed. This acts as training and testing set for the neural network model. Launch signCreator.py" and press 'q' to capture and save images.
-
+The user initially has to create up a folder of hand signs and gestures that would act as a dataset for the model. This folder contains the segmented hand signs thresholded and background noise removed. This acts as training and testing set for the neural network model. Launch *signCreator.py* script by doing:
+```python
+pip signCreator.py
+```
+You are then prompted to make a selection. Enter a choice of the hand sign in numerical digit. Press 'q' to capture and save the images.
+```python
+Enter the hand sign number :: 1
+Press q to capture the images
+```
+Place the hand in the green box and wait for the message to display on the screen for capturing the images. You'll see the camera feed. Move your hand slowly across the frame, closer and further from the camera. Try to rotate a bit your pose. Do every movement slowly as you want to create maximum number of images with minimal changes.
 
 #### 2
-Then these images are converted to a CSV file where there dimension is flattened. This acts the training and testing set. Run "dataCreator.py", to create the CSV file.
+Then these images are converted to a CSV file where there dimension is flattened. This acts the training and testing set. Launch dataCreator.py script, to create the CSV file.
+```python
+pip dataCreator.py
+```
 ####3
-Run "modelCreate.py" to initialise the neural network model. It saves the model and when additional data is provided,it continues from the last saved model.
+Launch modelCreate.py script to initialise the neural network model. It saves the model and when additional data is provided,it continues from the last saved model.
+```python
+pip modelCreate.py
+```
 
 #### 3
-Run "main.py" to run the hand gesture recognition. It provides a textual representation of the hand signs performed. Additional audio library can convert the text to speech and speech to text to hand signs conversion.
+Launch main.py script to run the hand gesture recognition. It provides a textual representation of the hand signs performed. Additional audio library can convert the text to speech and speech to text to hand signs conversion.
+```python
+pip main.py
+```
+## Architecture
+
+### Pipeline
+
+The pipeline of this project consists of 4 steps :
+- A frame is grabbed from the camera by a dedicated thread, converted to RGB (from BGR) and put into the input queue
+- A worker grabs the frame from the queue and pass it into the SSD. This gives us a bouding box of where the hand(s) is and the corresponding cropped frame. 
+- This cropped frame of the hand is then passed to the CNN, which give us a class vector output of values between 0 and 1. These values correspond to the probability of the frame to be one of the classes. The worker has finished its job and put: the frame with bouding box drawn on top, the cropped frame and the classes into three different queues.
+- The main thread, responsible of showing the results can grab the informations from the queues and display them in three windows.
+
 
 ## Packages Used:
 To initialise the project, the following libraries should be included by:
 ```python
 pip install -r requirements.txt
 ```
+
 
 
 

@@ -27,19 +27,20 @@ Then these images are converted to a CSV file where there dimension is flattened
 ```python
 pip dataCreator.py
 ```
-####3
+#### 3
 Launch modelCreate.py script to initialise the neural network model. It saves the model and when additional data is provided,it continues from the last saved model.
 ```python
 pip modelCreate.py
 ```
 <img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/modelcreate.gif" height="450">
 
-#### 3
+#### 4
 Launch main.py script to run the hand gesture recognition. It provides a textual representation of the hand signs performed. Additional audio library can convert the text to speech and speech to text to hand signs conversion.
 ```python
 pip main.py
 ```
 <img src="https://github.com/AkhilDixit1998/Hand_Gesture-Recognition/blob/master/screenshots/recognition.gif" height="450">
+
 ## Architecture
 
 ### Pipeline

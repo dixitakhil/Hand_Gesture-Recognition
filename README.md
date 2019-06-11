@@ -1,4 +1,6 @@
 # Hand_Gesture-Recognition
+![](https://img.shields.io/badge/python-3.6.2-brightgreen.svg)
+<br>
 This project is intended to create an interpreter for recognising hand signs and gestures. As of now it supports 14 hand signs of American Sign Language.
 
 ## Motivation
